@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     @property
     def database_url_sync(self) -> str:
         url = self.DATABASE_URL
+        if not url or not url.strip():
+            return "sqlite:///./realestate.db"
+        url = url.strip()
         if url.startswith("postgres://"):
             url = url.replace("postgres://", "postgresql://", 1)
         if url.startswith("postgresql://") and "+psycopg2" not in url:
