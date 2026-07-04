@@ -70,7 +70,7 @@ export const PropertyMap: React.FC<PropertyMapProps> = ({
 }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
-  const markersRef = useRef<L.MarkerClusterGroup | null>(null);
+  const markersRef = useRef<any>(null);
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -84,7 +84,7 @@ export const PropertyMap: React.FC<PropertyMapProps> = ({
       }).addTo(mapInstanceRef.current);
 
       // Initialize marker cluster group
-      markersRef.current = L.markerClusterGroup({
+      markersRef.current = (L as any).markerClusterGroup({
         chunkedLoading: true,
         maxClusterRadius: 50,
         spiderfyOnMaxZoom: true,

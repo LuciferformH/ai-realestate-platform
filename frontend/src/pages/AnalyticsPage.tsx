@@ -289,11 +289,11 @@ function renderTabContent(tab: string) {
                           <div
                             className="w-12 h-12 mx-auto rounded-lg flex items-center justify-center text-xs font-medium text-white"
                             style={{
-                              backgroundColor: `rgba(99, 102, 241, ${value})`,
-                              opacity: 0.3 + value * 0.7
+                              backgroundColor: `rgba(99, 102, 241, ${Number(value)})`,
+                              opacity: 0.3 + Number(value) * 0.7
                             }}
                           >
-                            {value.toFixed(2)}
+                            {typeof value === 'number' ? value.toFixed(2) : String(value)}
                           </div>
                         </td>
                       ))}
@@ -417,7 +417,7 @@ function renderTabContent(tab: string) {
                 nameKey="name"
                 stroke="#374151"
                 fill="#6366f1"
-                content={({ x, y, width, height, name, size }) => (
+                content={({ x, y, width, height, name, size }: any) => (
                   <g>
                     <rect x={x} y={y} width={width} height={height} fill={COLORS[Math.floor(Math.random() * COLORS.length)]} rx={4} />
                     {width > 80 && height > 40 && (

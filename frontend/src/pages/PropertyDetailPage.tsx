@@ -18,7 +18,7 @@ import {
   Printer,
   Phone,
   Train,
-  Hospital,
+  Building,
   ChevronRight,
 } from 'lucide-react';
 import { useProperty, useProperties } from '@/hooks/useProperties';
@@ -330,7 +330,7 @@ export default function PropertyDetailPage() {
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   <div className="flex items-center gap-3 rounded-xl bg-white/[0.03] p-3.5">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-rose-500/10">
-                      <Hospital className="h-5 w-5 text-rose-400" />
+                      <Building className="h-5 w-5 text-rose-400" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-white">{property.hospital_distance} km</p>

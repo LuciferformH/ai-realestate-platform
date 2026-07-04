@@ -77,7 +77,8 @@ export const Select: React.FC<SelectProps> = ({
 
   const removeTag = (val: string | number, e: React.MouseEvent) => {
     e.stopPropagation();
-    onChange?.(selectedValues.filter((v) => v !== val));
+    const filtered = selectedValues.filter((v) => v !== val) as string | number[];
+    onChange?.(filtered);
   };
 
   return (

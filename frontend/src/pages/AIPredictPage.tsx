@@ -14,6 +14,8 @@ interface PredictionResult {
   predictedPrice: number;
   confidence: number;
   model: string;
+  city: string;
+  propertyType: string;
   priceRange: { min: number; max: number };
   comparables: Array<{
     id: number;
@@ -182,6 +184,8 @@ const AIPredictPage: React.FC = () => {
       predictedPrice,
       confidence: Math.round(75 + Math.random() * 20),
       model: 'XGBoost v2.1',
+      city: form.city,
+      propertyType: form.propertyType,
       priceRange: {
         min: Math.round(predictedPrice * 0.85),
         max: Math.round(predictedPrice * 1.15)
