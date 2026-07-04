@@ -2,9 +2,19 @@
 
 > A modern, AI-powered real estate analytics platform that helps users analyze the housing market, predict property prices, discover investment opportunities, and visualize market trends using interactive dashboards.
 
-[![CI](https://github.com/your-org/ai-realestate/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/ai-realestate/actions)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-brightgreen)](https://ai-realestate-frontend-neon.vercel.app)
+[![CI](https://github.com/LuciferformH/ai-realestate-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/LuciferformH/ai-realestate-platform/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+## Live Demo
+
+**Frontend:** https://ai-realestate-frontend-neon.vercel.app
+**Backend API:** https://ai-realestate-backend.onrender.com/api/v1/docs
+
+**Login Credentials:**
+- Admin: `admin@realestate.com` / `admin123`
+- Test User: `test@realestate.com` / `test123`
 
 ## Features
 
