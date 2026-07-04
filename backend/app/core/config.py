@@ -10,7 +10,12 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
-    CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "https://ai-realestate-frontend.vercel.app",
+        "https://ai-realestate-frontend-neon.vercel.app",
+    ]
     OPENAI_API_KEY: str = ""
     ENVIRONMENT: str = "development"
 
@@ -28,7 +33,7 @@ class Settings(BaseSettings):
         url = self.DATABASE_URL
         if url.startswith("postgres://"):
             url = url.replace("postgres://", "postgresql://", 1)
-        if url.startswith("postgresql://") and "+asyncpg" not in url:
+        if url.startswith("postgresql://") and "+psycopg2" not in url:
             url = url.replace("postgresql://", "postgresql+psycopg2://", 1)
         return url
 
